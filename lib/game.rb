@@ -29,9 +29,9 @@ class Game
             if caseNbr >=0 && caseNbr <9
                 correct_case = 1
             end
-            if correct_case
+            if correct_case == 1
                 result = @board.play_turn(@joueurCourant,caseNbr)
-                if !result
+                if result == 0
                     puts "Case déjà prise"
                     correct_case = 0
                 end
@@ -60,6 +60,7 @@ class Game
             @premierJoueur = 1
         end
         @joueurCourant = @premierJoueur
+        @status=0
     end
   
     def game_end
@@ -86,4 +87,4 @@ class Game
     end
 end
 
-binding.pry
+#binding.pry

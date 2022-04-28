@@ -44,14 +44,14 @@ class Board
         end
         for k in 0..2 do
             if @case_list[k] != 0 && @case_list[k] == @case_list[k+3] && @case_list[k+3] == @case_list[k+6]
-                return @case_list[3*k]
+                return @case_list[k]
             end
         end
         if @case_list[0] != 0 && @case_list[4] == @case_list[0] && @case_list[4] == @case_list[8]
-            return @case_list[3*k]
+            return @case_list[0]
         end
         if @case_list[2] != 0 && @case_list[2] == @case_list[4] && @case_list[4] == @case_list[6]
-            return @case_list[3*k]
+            return @case_list[2]
         end
         if @case_list.include?(0)
             return 0
