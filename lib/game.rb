@@ -10,6 +10,7 @@ class Game
     def initialize(joueur1,joueur2)
         @joueur1=joueur1
         @joueur2=joueur2
+        @joueurList = [@joueur1,@joueur2]
         @board=Board.new()
         @joueurCourant = 1
         @status = board.test_Status()
@@ -22,8 +23,8 @@ class Game
     # redondant avec l'attribut status, mais ça coute rien
     def turn
         correct_case=0
-        while !correct_case
-            puts "c'est au tour de #{@joueur1}, entrez une _case entre 0 et 8:"
+        while correct_case==0
+            puts "c'est au tour de #{@joueurList[@joueurCourant-1]}, entrez une _case entre 0 et 8:"
             caseNbr = gets.chomp.to_i
             if caseNbr >=0 && caseNbr <9
                 correct_case = 1
